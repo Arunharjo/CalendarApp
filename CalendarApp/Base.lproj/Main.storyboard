@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4An-1J-33L">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--FSCalendar-->
+        <scene sceneID="6Ia-Hl-THr">
+            <objects>
+                <viewController id="4An-1J-33L" customClass="CalendarViewController" customModule="CalendarApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uId-dz-h5w"/>
+                        <viewControllerLayoutGuide type="bottom" id="HIb-0y-KjJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PdX-8I-tSz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rag-pX-FK5" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="44" width="414" height="300"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="uPd-MD-S39"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fakedSelectedDay">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="4An-1J-33L" id="5il-FP-vcy"/>
+                                    <outlet property="delegate" destination="4An-1J-33L" id="LjE-f5-4Yd"/>
+                                </connections>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="1ox-5d-304">
+                                <rect key="frame" x="0.0" y="360" width="414" height="502"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="NotificationTableViewCell" textLabel="xgE-U7-EOz" imageView="C9e-7i-ZpU" style="IBUITableViewCellStyleDefault" id="uNk-mB-Ifh" customClass="NotificationTableViewCell" customModule="CalendarApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uNk-mB-Ifh" id="vL7-lj-cmJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Lorem ipsum dolor sit er elit lamet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" id="xgE-U7-EOz">
+                                                    <rect key="frame" x="55.5" y="0.0" width="338.5" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="pencil.tip.crop.circle" catalog="system" id="C9e-7i-ZpU">
+                                                    <rect key="frame" x="20.25" y="12.5" width="20" height="19"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="title" destination="xgE-U7-EOz" id="3Pz-dd-0Q9"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="4An-1J-33L" id="PCb-9w-OrY"/>
+                                    <outlet property="delegate" destination="4An-1J-33L" id="5E0-yd-RfX"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mIw-NE-G9b"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1ox-5d-304" firstAttribute="leading" secondItem="Rag-pX-FK5" secondAttribute="leading" id="13w-r7-7oL"/>
+                            <constraint firstItem="HIb-0y-KjJ" firstAttribute="top" secondItem="1ox-5d-304" secondAttribute="bottom" id="3Jt-PN-Zd8"/>
+                            <constraint firstItem="1ox-5d-304" firstAttribute="top" secondItem="Rag-pX-FK5" secondAttribute="bottom" constant="16" id="6Db-Tk-Vuk"/>
+                            <constraint firstItem="Rag-pX-FK5" firstAttribute="top" secondItem="uId-dz-h5w" secondAttribute="bottom" id="7Xs-GX-ejd"/>
+                            <constraint firstItem="1ox-5d-304" firstAttribute="trailing" secondItem="Rag-pX-FK5" secondAttribute="trailing" id="Gh7-aS-C0U"/>
+                            <constraint firstAttribute="trailing" secondItem="Rag-pX-FK5" secondAttribute="trailing" id="MJF-jD-wcJ"/>
+                            <constraint firstItem="Rag-pX-FK5" firstAttribute="leading" secondItem="PdX-8I-tSz" secondAttribute="leading" id="thY-WX-GCy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="FSCalendar" id="vmG-7B-DBP">
+                        <barButtonItem key="rightBarButtonItem" title="Toggle" id="Wg9-Ad-cGE"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="calendar" destination="Rag-pX-FK5" id="DfF-mi-DPc"/>
+                        <outlet property="calendarHeightConstraint" destination="uPd-MD-S39" id="4Ea-AN-1nr"/>
+                        <outlet property="tableView" destination="1ox-5d-304" id="mIa-tR-dc5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IuE-Ap-gwT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="844" y="-225"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pencil.tip.crop.circle" catalog="system" width="128" height="121"/>
+    </resources>
+</document>
